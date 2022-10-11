@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<h1>Simple Photo Viewer v0.3 by Ashish Agarwal</h1>
+	<p>A simple photo viewer made by Ashish Agarwal that can be used to upload, view, copy image url and download image online.</p>
+	<input type="file" id="choose" accept=".jpg, .jpeg, .png, .webp" hidden>
+
+	<button id="upload">Upload Image</button>
+	<button class="hidden" id="copy">Copy Image URL</button>
+	<button class="trigger hidden" id="download_button">Download Image</button>
+
+	<p id="status">Please choose a file. Supported file types are: PNG, JPG, JPEG and WEBP.</p>
+	<img alt="" src="" id="output" class="hidden" rotate="0">
+
+	<br><br>
+
+	<div class="download hidden" id="dl">
+		<div class="modal">
+			<div class="modal-content">
+				<span class="close-button">&times;</span>
+	            <h1>Name your file</h1>
+	         	<p>The file will be downloaded with this name.<br><br>Do not edit the file extension. Instead, edit the file name.</p>
+	          	<input type="text" id="name" placeholder="example.png" value="example.png">
+	          	<br><br>
+	          	<button class="small" id="download">Download</button>         
+	        </div>
+	    </div>
+	</div>
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
