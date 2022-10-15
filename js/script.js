@@ -20,7 +20,6 @@ function fileUploaded(){
     reader.readAsDataURL(choose.files[0]);
     output.alt = choose.files[0].name;
     document.getElementById("name").value = file;
-	copy.setAttribute("data-clipboard-text",output.src);
 }
 
 choose.onchange = function(){
@@ -85,9 +84,9 @@ downloadButton.addEventListener("click", function(){
 window.addEventListener("click", windowOnClick);
 
 copy.onclick = function(){
-	navigator.clipboard.writeText(output.src);
-	copy.textContent = "Copied!";
-	setTimeout(function(){
-		copy.textContent = "Copy Image URL";
-	},800);
+navigator.clipboard.writeText(output.src).then(function() {
+  console.log('Async: Copying to clipboard was successful!');
+}, function(err) {
+  console.error('Async: Could not copy text: ', err);
+});
 }
