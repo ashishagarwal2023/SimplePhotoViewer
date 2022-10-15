@@ -20,6 +20,7 @@ function fileUploaded(){
     reader.readAsDataURL(choose.files[0]);
     output.alt = choose.files[0].name;
     document.getElementById("name").value = file;
+	copy.setAttribute("data-clipboard-text",output.src);
 }
 
 choose.onchange = function(){
